@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style2.css" rel= "stylesheet" type="text/css"> 
+        <!-- ?<img src="JoeHotDogStand.jpg" id="logo" alt="" > -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+<body>
+        <!-- Website Header -->
+    <div style="padding:0 16px; background-color: #333; text-align:center;">
+        
+
+        <h2 style="color: scheme #333;">Joe's Hotdog Stand</h2>
+        <br>
+        <h3 style="color: scheme #333;">Menu</h3>
+        <p>Hotdogs - $4.25</p>
+        <p>French Fries - $2.60</p>
+        <p>Drink - $1.50</p>
+        <p id="p1">Total Price</p>
+        <br>
+        <p></P>
+      </div>
+      
+<script>
+function JoeHotDogStand() {
+  let hotdogs = prompt("How many hotdogs do you want?");
+
+  let fries = prompt("How many french fries do you want?");
+
+  let drink = prompt("How many drinks do you want?");
+
+  let quantity = (hotdogs + fries + drink);
+  let subtotal = (hotdogs * 4.25 + fries * 2.60 + drink * 1.50);
+  let discount = 0;
+  if(subtotal >= 20) {
+    discount = (subtotal * 0.1);
+    subtotal = (subtotal - discount).toFixed(2);
+  }
+  let tax = (subtotal * .0625).toFixed(2);
+  let total = (subtotal - tax).toFixed(2);
+  let message = "Items Ordered: " + hotdogs + "<br>" +
+                "Subtotal: " + subtotal + "<br>" +
+                "Discount: " + discount + "<br>" +
+                "Tax: " + tax + "<br>" +
+                "Final Total: " + total; 
+  document.getElementById("p1").innerHTML = message;
+}
+  JoeHotDogStand();
+</script>
+
+</body>
+</html> 
