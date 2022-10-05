@@ -37,7 +37,7 @@ function JoeHotDogStand() {
     subtotal = math.round((subtotal - discount)*100)/100;
   }
   let tax = math.round((subtotal * .0625)*100)/100;
-  let total = (subtotal - tax).toFixed(2);
+  let total = math.round((subtotal - tax)*100)/100;
   let message = "Items Ordered: " + hotdogs + "<br>" +
                 "Subtotal: " + subtotal + "<br>" +
                 "Discount: " + discount + "<br>" +
