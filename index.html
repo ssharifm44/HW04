@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
         <link href="style2.css" rel= "stylesheet" type="text/css"> 
-        <!-- ?<img src="JoeHotDogStand.jpg" id="logo" alt="" > -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 <body>
@@ -23,26 +22,30 @@
       
 <script>
 function JoeHotDogStand() {
-  let hotdogs = prompt("How many hotdogs do you want?");
+  var hotdogs = prompt("How many hotdogs do you want?", 0);
+  var x=parseInt(hotdogs);
 
-  let fries = prompt("How many french fries do you want?");
+  var fries = prompt("How many french fries do you want?",0);
+   var y=parseInt(fries);
+  var drink = prompt("How many drinks do you want?",0);
+   var z=parseInt(drink);
 
-  let drink = prompt("How many drinks do you want?");
-
-  let quantity = (hotdogs + fries + drink);
-  let subtotal = (hotdogs * 4.25 + fries * 2.60 + drink * 1.50);
-  let discount = 0;
+  var quantity = x + y + z;
+  var subtotal = (hotdogs * 4.25 + fries * 2.60 + drink * 1.50);
+  var discount = 0;
+  
   if(subtotal >= 20) {
-    discount = (subtotal * 0.1);
-    subtotal = math.round((subtotal - discount)*100)/100;
+    discount = Math.round((subtotal * 0.1)*100)/100;
+    subtotal = Math.round((subtotal - discount)*100)/100;
   }
-  let tax = math.round((subtotal * .0625)*100)/100;
-  let total = math.round((subtotal - tax)*100)/100;
-  let message = "Items Ordered: " + hotdogs + "<br>" +
-                "Subtotal: " + subtotal + "<br>" +
-                "Discount: " + discount + "<br>" +
-                "Tax: " + tax + "<br>" +
-                "Final Total: " + total; 
+  var temp=hotdogs;
+  var tax = Math.round((subtotal * .0625)*100)/100;
+  var total = Math.round((subtotal - tax)*100)/100;
+  var message = "Items Ordered: $" + quantity + "<br>" +
+                "Subtotal: $" + subtotal + "<br>" +
+                "Discount: $" + discount + "<br>" +
+                "Tax: $" + tax + "<br>" +
+                "Final Total: $" + total; 
   document.getElementById("p1").innerHTML = message;
 }
   JoeHotDogStand();
